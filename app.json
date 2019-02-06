@@ -1,0 +1,5 @@
+{
+  "name": "Labelbox proxy",
+  "description": "A proxy service for generating presigned urls",
+  "repository": "https://github.com/Labelbox/signed-url-example"
+}
