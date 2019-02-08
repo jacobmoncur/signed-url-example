@@ -1,5 +1,17 @@
 {
   "name": "Labelbox proxy",
   "description": "A proxy service for generating presigned urls",
-  "repository": "https://github.com/Labelbox/signed-url-example"
+  "repository": "https://github.com/Labelbox/signed-url-example",
+  "env": {
+    "SECRET": {
+      "description": "A JWT secret used to generate your signed urls",
+      "generator": "secret"
+    },
+    "AWS_ACCESS_KEY_ID":{
+      "description": "Access key for your AWS S3 bucket."
+    },
+    "AWS_SECRET_ACCESS_KEY":{
+      "description": "Secret access key for your AWS S3 bucket."
+    }
+  }
 }
