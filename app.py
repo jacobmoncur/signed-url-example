@@ -1,4 +1,6 @@
 import boto3
+from botocore.client import Config
+
 from flask import Flask, request, redirect
 import jwt
 import os
@@ -7,14 +9,12 @@ app = Flask(__name__)
 
 secret = os.environ['SECRET']
 
-s3_client = boto3.client('s3')
-
+s3_client = boto3.client('s3', config=Config(signature_version='s3v4'))
 
 def generate_presigned_url(jwt):
     url = s3_client.generate_presigned_url(ClientMethod='get_object', Params={
         'Bucket': jwt['bucket'], 'Key': jwt['key']}, ExpiresIn='3600')
     return url
-
 
 @app.route('/')
 def pull_url():
