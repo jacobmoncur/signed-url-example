@@ -12,6 +12,9 @@
     },
     "AWS_SECRET_ACCESS_KEY":{
       "description": "Secret access key for your AWS S3 bucket."
+    },
+    "AWS_DEFAULT_REGION": {
+      "description": "AWS region where your bucket is located. Default: us-east-1"
     }
   }
 }
