@@ -7,8 +7,7 @@ app = Flask(__name__)
 
 secret = os.environ['SECRET']
 
-s3_client = boto3.client('s3')
-
+s3_client = boto3.client('s3', endpoint_url = 'https://s3.us-west-000.backblazeb2.com')
 
 def generate_presigned_url(jwt):
     url = s3_client.generate_presigned_url(ClientMethod='get_object', Params={
